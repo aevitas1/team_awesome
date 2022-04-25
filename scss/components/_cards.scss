@@ -1,0 +1,30 @@
+.card {
+  padding: 2rem 2rem;
+  width: 29rem;
+  @media only screen and (max-width: 28rem) {
+    width: 20rem;
+    padding: 2rem 1rem;
+  }
+  .card-header {
+    display: inline-flex;
+    align-items: center;
+    h3 {
+      position: relative;
+      font-size: calc(2.292vmin + 2.042rem);
+    }
+    .icon {
+      margin-right: 1rem;
+    }
+  }
+  .card-body {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    height: 15rem;
+    @media only screen and (max-width: 70rem) {
+      height: 17.5rem;
+    }
+    p {
+      padding-bottom: 1.5rem;
+    }
+  }
+}

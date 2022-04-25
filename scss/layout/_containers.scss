@@ -1,0 +1,98 @@
+@use "../base/variables";
+.page-wrapper {
+  display: flex;
+  flex-flow: column;
+  background-color: rgb(var(--main-bg));
+  overflow-x: hidden;
+  gap: 2.5rem;
+  @media only screen and (max-width: 48rem) {
+    gap: 1rem;
+  }
+}
+
+section:nth-of-type(even) {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(36, 36, 36, 1) 99%
+  );
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-bottom: 1.5rem;
+}
+
+section:nth-of-type(odd):not(.hero) {
+  background: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(36, 36, 36, 1) 99%
+  );
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-bottom: 1rem;
+}
+
+section:not(.hero) .section-wrapper {
+  padding-top: 5rem;
+  @media only screen and (max-width: 75rem) {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  @media only screen and (max-width: 48rem) {
+    padding-top: 2.5rem;
+  }
+}
+.section-wrapper {
+  background: rgb(var(--main-bg));
+  padding-bottom: 5rem;
+}
+
+/* class to disable background color to display gradient */
+.section-wrapper.bg-hidden {
+  background: none;
+}
+/* reduce background gradient size on certain sections*/
+#services,
+#quotes,
+#quote-slider {
+  background-size: 33%;
+  @media only screen and (max-width: 62.5rem) {
+    background-size: 40%;
+  }
+}
+
+/* section base */
+section {
+  .section-wrapper {
+    .hero-bg {
+      position: relative;
+      z-index: 6;
+      .bg-img-text {
+        position: relative;
+        z-index: 5;
+        width: auto;
+        top: 15vh;
+        p {
+          padding-bottom: 2rem;
+        }
+        footer {
+          position: relative;
+          display: flex;
+        }
+      }
+      .bg-img {
+        position: absolute;
+        z-index: -1;
+        height: inherit;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        @media (hover: none) {
+          background-attachment: scroll;
+        }
+      }
+    }
+  }
+}
